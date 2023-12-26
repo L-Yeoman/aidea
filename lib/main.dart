@@ -100,10 +100,13 @@ import 'page/component/theme/theme.dart';
 import 'package:sizer/sizer.dart';
 import 'package:askaide/helper/http.dart' as httpx;
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:umeng_common_sdk/umeng_common_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   httpx.HttpClient.init();
+  UmengCommonSdk.initCommon('6582573c95b14f599d038492', '6582573c95b14f599d038492', 'Umeng');
+  UmengCommonSdk.setPageCollectionModeManual();
 
   // FlutterError.onError = (FlutterErrorDetails details) {
   //   if (details.library == 'rendering library' ||

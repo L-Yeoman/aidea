@@ -132,6 +132,9 @@ dev_dependencies:
   flutter_launcher_icons: "^0.12.0"
   build_runner: ^2.3.3
 
+  umeng_common_sdk: ^1.2.3
+
+
 flutter_icons:
   image_path: "assets/app.png"
   

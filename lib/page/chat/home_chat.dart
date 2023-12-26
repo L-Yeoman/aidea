@@ -34,6 +34,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:askaide/repo/model/model.dart' as mm;
+import 'package:umeng_common_sdk/umeng_common_sdk.dart';
+
+import '../../helper/logger.dart';
 
 class HomeChatPage extends StatefulWidget {
   final MessageStateManager stateManager;
@@ -554,6 +557,35 @@ class _HomeChatPageState extends State<HomeChatPage> {
             isResent: isResent,
           ),
         );
+    /* Msg:{id: null, user_id: null, chat_history_id: 0, role: sender, text: 隔夜水能喝吗, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702886916816, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+
+    Msg:{id: null, user_id: null, chat_history_id: 9, role: sender, text: 如何造一架飞机, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702887007202, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+
+    Msg:{id: null, user_id: null, chat_history_id: 0, role: sender, text: 如何制作茶叶, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702887087926, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+
+    Msg:{id: null, user_id: null, chat_history_id: 10, role: sender, text: 继续, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702887152405, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+
+    Msg:{id: null, user_id: null, chat_history_id: 0, role: sender, text: 怎么采摘茶叶, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702887250709, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+
+    Msg:{id: null, user_id: null, chat_history_id: 11, role: sender, text: 对穷人的一生有什么建议, type: text, extra: null, model: gpt-3.5-turbo, user: me, ts: 1702887325991, room_id: null, ref_id: null, server_id: null, status: 1, token_consumed: null, quota_consumed: null, images: []}
+    */
+    UmengCommonSdk.onEvent("sendGptMsg3.5", {"user":widget.setting.get(settingUserInfo),"msg:":text,",model":widget.model});
+    Logger.instance.i('发送消息:$text,model:$widget.model');
+    Logger.instance.i('Msg:${
+        Message(
+          Role.sender,
+          text,
+          user: 'me',
+          ts: DateTime.now(),
+          model: widget.model,
+          type: messagetType,
+          chatHistoryId: chatId,
+          images: selectedImageFiles
+              .where((e) => e.uploaded)
+              .map((e) => e.url!)
+              .toList(),
+        ).toMap()
+    }');
 
     // ignore: use_build_context_synchronously
     context.read<NotifyBloc>().add(NotifyResetEvent());

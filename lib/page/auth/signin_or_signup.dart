@@ -18,6 +18,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:go_router/go_router.dart';
+import 'package:umeng_common_sdk/umeng_common_sdk.dart';
+import 'package:askaide/helper/logger.dart';
+
 
 class SigninOrSignupScreen extends StatefulWidget {
   final SettingRepository settings;
@@ -405,6 +408,14 @@ class _SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
         return;
       } else {
         if (context.mounted) {
+          if(widget.isSignup){
+            UmengCommonSdk.onEvent("register", {"user":jsonEncode(value)});
+
+          }else{
+            UmengCommonSdk.onEvent("登录", {"user":jsonEncode(value)});
+            Logger.instance.e('登录成功: ${jsonEncode(value)}');
+          }
+
           context.go(
               '${Ability().homeRoute}?show_initial_dialog=${value.isNewUser ? "true" : "false"}&reward=${value.reward}');
         }
