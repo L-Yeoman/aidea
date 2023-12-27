@@ -17,7 +17,7 @@ class HttpClient {
     if (!PlatformTool.isWeb()) {
       dio.interceptors.add(cacheManager.interceptor);
     }
-
+    dio.interceptors.add(LogInterceptor(requestBody: true,responseBody: true));
     dio.interceptors.add(RetryInterceptor(
       dio: dio,
       retries: 3,

@@ -680,7 +680,7 @@ class _SettingScreenState extends State<SettingScreen> {
       },
     );
   }
-
+  //关注我们
   CustomSettingsSection _buildSocialIcons(BuildContext context) {
     return CustomSettingsSection(
       child: SocialIconGroup(

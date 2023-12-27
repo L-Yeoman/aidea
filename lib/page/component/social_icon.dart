@@ -30,16 +30,6 @@ class SocialIconGroup extends StatelessWidget {
       },
     ),
     SocialItem(
-      image: 'assets/weibo.png',
-      name: '新浪微博',
-      onTap: () {
-        launchUrlString(
-          'https://ai.aicode.cc/social/weibo',
-          mode: LaunchMode.externalApplication,
-        );
-      },
-    ),
-    SocialItem(
       image: 'assets/wechat.png',
       name: '微信公众号',
       onTap: () {
@@ -49,7 +39,18 @@ class SocialIconGroup extends StatelessWidget {
         );
       },
     ),
-    SocialItem(
+  /*  SocialItem(
+      image: 'assets/weibo.png',
+      name: '新浪微博',
+      onTap: () {
+        launchUrlString(
+          'https://ai.aicode.cc/social/weibo',
+          mode: LaunchMode.externalApplication,
+        );
+      },
+    ),
+    */
+  /*  SocialItem(
       image: 'assets/x.png',
       name: 'Twitter(X)',
       onTap: () {
@@ -68,8 +69,8 @@ class SocialIconGroup extends StatelessWidget {
           mode: LaunchMode.externalApplication,
         );
       },
-    ),
-    SocialItem(
+    ),*/
+   /* SocialItem(
       image: 'assets/xiaohongshu.png',
       name: '小红书',
       onTap: () {
@@ -78,7 +79,7 @@ class SocialIconGroup extends StatelessWidget {
           mode: LaunchMode.externalApplication,
         );
       },
-    ),
+    ),*/
   ];
 
   SocialIconGroup({
