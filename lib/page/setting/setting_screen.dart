@@ -253,7 +253,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       onPressed: (_) {
                         showAboutDialog(
                           context: context,
-                          applicationName: 'AIdea',
+                          applicationName: 'SuperAI',
                           applicationIcon:
                               Image.asset('assets/app.png', width: 40),
                           applicationVersion: clientVersion,

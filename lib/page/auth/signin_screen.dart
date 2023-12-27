@@ -104,10 +104,10 @@ class _SignInScreenState extends State<SignInScreen> {
                   AnimatedTextKit(
                     animatedTexts: [
                       ColorizeAnimatedText(
-                        'AIdea',
+                        'SuperAI',
                         textStyle: const TextStyle(fontSize: 30.0),
                         colors: [
-                          Colors.purple,
+                          Colors.deepOrangeAccent,
                           Colors.blue,
                           Colors.yellow,
                           Colors.red,

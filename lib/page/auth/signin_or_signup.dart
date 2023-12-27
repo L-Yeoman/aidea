@@ -412,7 +412,7 @@ class _SigninOrSignupScreenState extends State<SigninOrSignupScreen> {
             UmengCommonSdk.onEvent("register", {"user":jsonEncode(value)});
 
           }else{
-            UmengCommonSdk.onEvent("登录", {"user":jsonEncode(value)});
+            UmengCommonSdk.onEvent("1", {"user":jsonEncode(value)});
             Logger.instance.e('登录成功: ${jsonEncode(value)}');
           }
 

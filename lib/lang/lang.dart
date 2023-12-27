@@ -4,6 +4,9 @@ mixin AppLocale {
   static const String appName = 'app_name';
   static const String homeTitle = 'home_title';
   static const String chatAnywhere = 'chat_anywhere';
+  static const String tabApplication = 'tab_application';
+  static const String tabChat = 'tab_chat';
+  static const String aiCanvas = 'ai_canvas';
   static const String creativeIsland = 'creative_island';
   static const String settings = 'settings';
   static const String language = 'language';
@@ -239,6 +242,10 @@ mixin AppLocale {
     creativeIsland: '创作岛',
     settings: '设置',
     language: '语言',
+    tabChat: '聊天',
+    tabApplication:'应用',
+    aiCanvas:'绘图',
+
     themeMode: '主题外观',
     accountInfo: '账号信息',
     accountSettings: '账号设置',
@@ -395,7 +402,7 @@ mixin AppLocale {
     buyCoins: '购买智慧果',
     coinUnit: '个',
     toPay: '立即支付',
-    discover: '绘玩',
+    discover: '发现',
     customHomeModels: '常用模型',
     userApiKeys: 'API Keys',
   };
@@ -432,8 +439,11 @@ mixin AppLocale {
     appName: 'AIdea',
     chatAnywhere: 'Chat',
     homeTitle: 'Characters',
-    creativeIsland: 'Creative',
     settings: 'Setting',
+    tabChat:'Chat',
+    tabApplication:'Application',
+    creativeIsland: 'Creative',
+    aiCanvas:'aiCanvas',
     language: 'Language',
     themeMode: 'Theme',
     accountInfo: 'Account Info',

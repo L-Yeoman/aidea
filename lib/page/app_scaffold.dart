@@ -64,24 +64,36 @@ class _AppScaffoldState extends State<AppScaffold> {
       if (Ability().enableChat)
         BottomNavigationBarConfig(
           builder: (index, customColors) => createAnimatedNavBarItem(
-            icon: Icons.question_answer_outlined,
-            activatedIcon: Icons.question_answer,
+            icon: Icons.sms_outlined,
+            activatedIcon: Icons.sms,
             activatedColor: customColors.linkColor,
-            label: AppLocale.chatAnywhere.getString(context),
+            label: AppLocale.tabChat.getString(context),
             activated: currentIndex == index,
           ),
           route: '/chat-chat',
         ),
-      if (Ability().enableDigitalHuman)
+      /* if (Ability().enableDigitalHuman)//数字人
         BottomNavigationBarConfig(
           builder: (index, customColors) => createAnimatedNavBarItem(
-            icon: Icons.group_outlined,
-            activatedIcon: Icons.group,
+            icon: Icons.widgets_outlined,
+            activatedIcon: Icons.widgets,
             activatedColor: customColors.linkColor,
-            label: AppLocale.homeTitle.getString(context),
+            label: AppLocale.tabApplication.getString(context),
             activated: currentIndex == index,
           ),
           route: '/',
+        ),*/
+
+      if (Ability().enableCreationIsland)
+        BottomNavigationBarConfig(
+          builder: (index, customColors) => createAnimatedNavBarItem(
+            icon: Icons.palette_outlined,
+            activatedIcon: Icons.palette,
+            activatedColor: customColors.linkColor,
+            label: AppLocale.aiCanvas.getString(context),
+            activated: currentIndex == index,
+          ),
+          route: '/creative-draw',
         ),
       if (Ability().enableGallery)
         BottomNavigationBarConfig(
@@ -93,17 +105,6 @@ class _AppScaffoldState extends State<AppScaffold> {
             activated: currentIndex == index,
           ),
           route: '/creative-gallery',
-        ),
-      if (Ability().enableCreationIsland)
-        BottomNavigationBarConfig(
-          builder: (index, customColors) => createAnimatedNavBarItem(
-            icon: Icons.palette_outlined,
-            activatedIcon: Icons.palette,
-            activatedColor: customColors.linkColor,
-            label: AppLocale.creativeIsland.getString(context),
-            activated: currentIndex == index,
-          ),
-          route: '/creative-draw',
         ),
       BottomNavigationBarConfig(
         builder: (index, customColors) => createAnimatedNavBarItem(

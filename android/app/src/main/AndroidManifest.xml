@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cc.aicode.flutter.askaide.askaide">
-   <application
-        android:label="AIdea"
-        android:name="${applicationName}"
+    package="com.superai.app">
+  <!--        android:name="${applicationName}"-->
+
+<!--        android:name=".MyApp"-->
+  <application
+        android:label="SuperAI"
+        android:name=".App"
         android:icon="@mipmap/launcher_icon"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
@@ -30,6 +33,12 @@
                 <action android:name="${applicationId}.FlutterActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+          <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="um.6582573c95b14f599d038492" />
+          </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -38,6 +47,7 @@
                     android:path="/"
                     android:scheme="wechatextmsg" />
             </intent-filter>
+
         </activity>
         <!-- Set up the Sign in with Apple activity, such that it's callable from the browser-redirect -->
         <activity

@@ -122,7 +122,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 .then((status) {
               _closePaymentLoading();
               showSuccessMessage('购买成功');
-              UmengCommonSdk.onEvent("购买成功", {"user":widget.setting.get(settingUserInfo),"rawPrice":selectedProduct?.rawPrice,"price":selectedProduct?.price,"description":selectedProduct?.description});
+              UmengCommonSdk.onEvent("recharge", {"user":widget.setting.get(settingUserInfo),"rawPrice":selectedProduct?.rawPrice,"price":selectedProduct?.price,"description":selectedProduct?.description});
             }).onError((error, stackTrace) {
               _closePaymentLoading();
               showErrorMessage(resolveError(context, error!));
@@ -139,7 +139,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
           APIServer().cancelApplePay(paymentId!).whenComplete(() {
             _closePaymentLoading();
             showErrorMessage('购买已取消');
-            UmengCommonSdk.onEvent("取消购买", {"user":widget.setting.get(settingUserInfo)});
+            // UmengCommonSdk.onEvent("取消购买", {"user":widget.setting.get(settingUserInfo)});
 
           });
 
